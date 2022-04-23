@@ -1,118 +1,269 @@
 <template>
   <div>
-    <v-app-bar app dark color="primary" elevate-on-scroll>
-      <v-app-bar-nav-icon @click="drawer = !drawer"/>
+    <v-app-bar style="background-color: #e6eaf1">
+      <div class="logo">
+        <v-img
+          style="width: 150px; height: 55px; margin: 0px 150px 0px 60px"
+          src="../assets/images/Asset 4@3x.png"
+        ></v-img>
+      </div>
 
-      <v-card-title>Template 1</v-card-title>
-      <v-spacer/>
-
-      <profile-popup/>
-    </v-app-bar>
-    <v-main class="main-bg">
-      <v-container>
-        <router-view/>
-      </v-container>
-    </v-main>
-    <v-navigation-drawer v-model="drawer" app>
-      <img src="../assets/logo.png" alt="logo" class="logo" height="70"/>
-      <v-divider/>
-      <template v-for="(route, key) in routes">
-        <v-list-item
-            v-if="route.isVisible"
-            :key="key"
-            class="route"
-            color="#da57a7"
-            active-class="route--active"
-            exact
-            dense
-            :to="route.to"
-        >
-          <v-list-item-icon>
-            <v-icon v-text="route.icon"/>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title v-text="route.title"/>
-          </v-list-item-content>
-        </v-list-item>
-        <v-divider v-else-if="route.isDivider" :key="key" style="margin: 10px 20px"/>
+      <template>
+        <v-tabs id="tabs">
+          <v-tab>
+            <router-link style="text-decoration: none; color: inherit" to="/"
+              >Home</router-link
+            >
+          </v-tab>
+          <v-tab
+            ><router-link
+              style="text-decoration: none; color: inherit"
+              to="/magazines"
+              >Magazines</router-link
+            ></v-tab
+          >
+          <v-tab
+            ><router-link
+              style="text-decoration: none; color: inherit"
+              to="/students"
+              >Students</router-link
+            ></v-tab
+          >
+          <v-tab
+            ><router-link
+              style="text-decoration: none; color: inherit"
+              to="/vote"
+              >Vote</router-link
+            ></v-tab
+          >
+          <v-tab
+            ><router-link
+              style="text-decoration: none; color: inherit"
+              to="/schools"
+              >Schools</router-link
+            ></v-tab
+          >
+          <v-tab
+            ><router-link
+              style="text-decoration: none; color: inherit"
+              to="/about"
+              >About</router-link
+            ></v-tab
+          >
+          <v-tab
+            ><router-link
+              style="text-decoration: none; color: inherit"
+              to="/contact"
+              >Contact</router-link
+            ></v-tab
+          >
+        </v-tabs>
       </template>
+
+      <div>
+        <v-btn
+          id="btn"
+          rounded
+          color="#4173A3"
+          width="120px"
+          height="40px"
+          style="color: white; margin-right: 20px"
+        >
+          Log In
+        </v-btn>
+        <v-btn icon id="Icon">
+          <v-icon large @click.stop="drawer = !drawer">
+            mdi-format-list-bulleted
+          </v-icon>
+        </v-btn>
+      </div>
+    </v-app-bar>
+
+    <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-list nav dense>
+        <v-list-item-group active-class="deep-purple--text text--accent-4">
+          <v-list-item>
+            <v-img src="../assets/images/Asset 4@3x.png"></v-img>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title 
+              ><router-link to="" style="text-decoration: none; color: inherit"
+                >Home</router-link
+              >
+            </v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><router-link to="" style="text-decoration: none; color: inherit"
+                >Magazines</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><router-link to="" style="text-decoration: none; color: inherit"
+                >Students</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><router-link to="" style="text-decoration: none; color: inherit"
+                >Vote</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><router-link to="" style="text-decoration: none; color: inherit"
+                >Schools</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><router-link to="" style="text-decoration: none; color: inherit"
+                >About</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><router-link to="" style="text-decoration: none; color: inherit"
+                >Contact</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-btn
+            rounded
+            color="#4173A3"
+            width="200px"
+            style="color: white; margin-top: 20px"
+          >
+            <router-link to="" style="text-decoration: none; color: inherit"
+              >Log In</router-link
+            >
+          </v-btn>
+        </v-list-item-group>
+      </v-list>
     </v-navigation-drawer>
+
+    <v-main>
+      <router-view />
+    </v-main>
+    <v-footer color="#2F5E8B">
+      <div style="display: flex; width: 100%; height: 50px">
+        <v-card-text style="width: 50%; text-align: right">
+          <p style="color: white; font-size: 12px">
+            Copyright &copy; 2022 Acadelatics.com limited. All rights reserved.
+          </p>
+        </v-card-text>
+
+        <v-card-text
+          style="
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            font-size: 12px;
+          "
+        >
+          <p style="color: white">Terms & Condition</p>
+          <v-divider
+            vertical
+            color="white"
+            style="margin: 0px 10px 0px 10px"
+          ></v-divider>
+          <p style="color: white">Privacy Policy</p>
+        </v-card-text>
+      </div>
+    </v-footer>
   </div>
 </template>
 
 <script>
-import ProfilePopup from "./ProfilePopup";
-import {getUser} from "@/utils/local";
-import {required} from "@/utils/validators";
-
 export default {
-  name: 'Dashboard',
-  components: {ProfilePopup},
-  data: () => ({
-    drawer: true,
-    user: {},
-    developMode: false,
-    developModeDialog: false,
-    message: null,
-    developModeData: null,
-    loading: false,
-  }),
-  methods: {
-    getUser,
-    required,
-  },
-  computed: {
-    routes() {
-      return [
-        {
-          to: '/',
-          title: 'Dashboard',
-          icon: 'mdi-view-dashboard-variant',
-          isVisible: true
-        },
-        {isDivider: true},
-        {
-          to: '/notifications',
-          title: 'Notifications',
-          icon: 'mdi-bell',
-          isVisible: true
-        },
-        {isDivider: true},
-        {
-          to: '/users',
-          title: 'Users',
-          icon: 'mdi-account-group',
-          isVisible: true
-        },
-      ];
-    }
+  data() {
+    return {
+      drawer: false
+    };
   }
 };
 </script>
 
-<style lang="sass" scoped>
-.logo
-  display: block
-  margin: 5px auto
-  border-radius: 10px
 
-.route
-  margin: 5px
-  text-align: left
-  overflow: hidden
-  border-radius: 4px
-  font-size: 20px !important
-  font-family: "Roboto", sans-serif
+<style>
+#Icon {
+  display: none;
+}
 
-  i
-    font-size: 20px
+@media only screen and (max-width: 1210px) {
+  #tabs {
+    margin-left: -100px;
+  }
+}
 
-  &--active i
-    color: inherit
+@media only screen and (max-width: 1115px) {
+  #tabs {
+    display: none;
+  }
 
-  &--active
-    color: #495db7
+  #btn {
+    display: none;
+  }
 
-.main-bg
-  background: linear-gradient(to bottom, #1976d2 300px, white 300px)
+  #Icon {
+    display: block;
+  }
+
+  .logo {
+    margin-left: -30px;
+    margin-right: 56%;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .logo {
+    margin-left: -30px;
+    margin-right: 45%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .logo {
+    margin-right: 35%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    margin-right: 25%;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .logo {
+    margin-left: -50px;
+    margin-right: 15%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .logo {
+    margin-right: 5%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .logo {
+    margin-left: -50px;
+    margin-right: -40px;
+  }
+}
 </style>
