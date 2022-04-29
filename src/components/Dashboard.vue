@@ -86,7 +86,7 @@
             <v-img src="../assets/images/Asset 4@3x.png"></v-img>
           </v-list-item>
           <v-list-item>
-            <v-list-item-title 
+            <v-list-item-title
               ><router-link to="" style="text-decoration: none; color: inherit"
                 >Home</router-link
               >
@@ -158,10 +158,10 @@
     <v-main>
       <router-view />
     </v-main>
-    <v-footer color="#2F5E8B">
-      <div style="display: flex; width: 100%; height: 50px">
+    <v-footer id="footerMain" color="#2F5E8B">
+      <div id="footerText" style="display: flex; width: 100%; height: 50px">
         <v-card-text style="width: 50%; text-align: right">
-          <p style="color: white; font-size: 12px">
+          <p id="footerText1" style="color: white; font-size: 12px">
             Copyright &copy; 2022 Acadelatics.com limited. All rights reserved.
           </p>
         </v-card-text>
@@ -174,13 +174,9 @@
             font-size: 12px;
           "
         >
-          <p style="color: white">Terms & Condition</p>
-          <v-divider
-            vertical
-            color="white"
-            style="margin: 0px 10px 0px 10px"
-          ></v-divider>
-          <p style="color: white">Privacy Policy</p>
+          <p id="footerText21" style="color: white">Terms & Condition</p>
+          <v-divider vertical style="margin: 0px 10px"></v-divider>
+          <p id="footerText22" style="color: white">Privacy Policy</p>
         </v-card-text>
       </div>
     </v-footer>
@@ -235,6 +231,13 @@ export default {
   }
 }
 
+@media only screen and (max-width: 850px) {
+  #footerText1 {
+    text-align: left;
+    line-height: 18px;
+  }
+}
+
 @media only screen and (max-width: 720px) {
   .logo {
     margin-right: 35%;
@@ -251,6 +254,19 @@ export default {
   .logo {
     margin-left: -50px;
     margin-right: 15%;
+  }
+  #footerText1 {
+    margin-left: -20px;
+    line-height: 15px;
+  }
+  #footerText21 {
+    font-size: 8px;
+  }
+  #footerText22 {
+    font-size: 8px;
+  }
+  #footerMain {
+    padding-bottom: 22px;
   }
 }
 
