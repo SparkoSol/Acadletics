@@ -28,10 +28,10 @@
         <v-divider style="margin-top: -15px"></v-divider>
       </div>
     </div>
-    <div style="display: flex">
-      <div id="main" style="width: 70%">
+    <div id="main01" style="display: flex">
+      <div style="width: 70%">
         <div>
-          <div style="margin-top: 50px; padding-left: 140px; width:600px">
+          <div style="margin-top: 50px; padding-left: 140px; width: 600px">
             <v-divider></v-divider>
           </div>
           <div style="width: 500px; margin-left: 150px; margin-top: 20px">
@@ -109,7 +109,7 @@
         </div>
 
         <div>
-          <div style="margin-top: 50px; padding-left: 140px; width:600px">
+          <div style="margin-top: 50px; padding-left: 140px; width: 600px">
             <v-divider></v-divider>
           </div>
           <div style="width: 500px; margin-left: 150px; margin-top: 20px">
@@ -187,7 +187,7 @@
         </div>
 
         <div>
-          <div style="margin-top: 50px; padding-left: 140px; width:600px">
+          <div style="margin-top: 50px; padding-left: 140px; width: 600px">
             <v-divider></v-divider>
           </div>
           <div style="width: 500px; margin-left: 150px; margin-top: 20px">
@@ -292,7 +292,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  #main {
+  #main01 {
     margin-left: -20%;
   }
   #vote {
@@ -302,11 +302,18 @@
     margin-left: -100px !important;
   }
 }
-
-@media only screen and (max-width: 450px) {
-  #main {
+@media only screen and (max-width: 470px) {
+  #main01 {
     margin-left: -30%;
-    font-size: 10px;
+  }
+  #title {
+    margin-left: -12px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main01 {
+    margin-left: -30%;
   }
   #title {
     font-size: 17px;

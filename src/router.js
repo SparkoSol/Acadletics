@@ -9,6 +9,9 @@ import Schools from './views/Schools';
 import About from './views/About';
 import Contact from './views/Contact';
 
+import logIn from './views/auth/logIn'
+import signUp from './views/auth/signUp'
+
 Vue.use(VueRouter);
 
 const routes = [{
@@ -41,8 +44,17 @@ const routes = [{
         {
             path: '/contact',
             component: Contact
+        },
+        {
+            path: '/logIn',
+            component: logIn,
+        },
+        {
+            path: '/signUp',
+            component: signUp,
         }
-    ]
+    ],
+
 }];
 
 const router = new VueRouter({

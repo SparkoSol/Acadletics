@@ -69,7 +69,7 @@
           height="40px"
           style="color: white; margin-right: 20px"
         >
-          Log In
+          <router-link style="text-decoration:none; color:inherit" to="/logIn"> Log In </router-link>
         </v-btn>
         <v-btn icon id="Icon">
           <v-icon large @click.stop="drawer = !drawer">
@@ -87,7 +87,7 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-title
-              ><router-link to="" style="text-decoration: none; color: inherit"
+              ><router-link to="/" style="text-decoration: none; color: inherit"
                 >Home</router-link
               >
             </v-list-item-title>
@@ -95,7 +95,9 @@
 
           <v-list-item>
             <v-list-item-title
-              ><router-link to="" style="text-decoration: none; color: inherit"
+              ><router-link
+                to="/magazines"
+                style="text-decoration: none; color: inherit"
                 >Magazines</router-link
               ></v-list-item-title
             >
@@ -103,7 +105,9 @@
 
           <v-list-item>
             <v-list-item-title
-              ><router-link to="" style="text-decoration: none; color: inherit"
+              ><router-link
+                to="/students"
+                style="text-decoration: none; color: inherit"
                 >Students</router-link
               ></v-list-item-title
             >
@@ -111,7 +115,9 @@
 
           <v-list-item>
             <v-list-item-title
-              ><router-link to="" style="text-decoration: none; color: inherit"
+              ><router-link
+                to="/vote"
+                style="text-decoration: none; color: inherit"
                 >Vote</router-link
               ></v-list-item-title
             >
@@ -119,7 +125,9 @@
 
           <v-list-item>
             <v-list-item-title
-              ><router-link to="" style="text-decoration: none; color: inherit"
+              ><router-link
+                to="/schools"
+                style="text-decoration: none; color: inherit"
                 >Schools</router-link
               ></v-list-item-title
             >
@@ -127,7 +135,9 @@
 
           <v-list-item>
             <v-list-item-title
-              ><router-link to="" style="text-decoration: none; color: inherit"
+              ><router-link
+                to="/about"
+                style="text-decoration: none; color: inherit"
                 >About</router-link
               ></v-list-item-title
             >
@@ -135,7 +145,9 @@
 
           <v-list-item>
             <v-list-item-title
-              ><router-link to="" style="text-decoration: none; color: inherit"
+              ><router-link
+                to="/contact"
+                style="text-decoration: none; color: inherit"
                 >Contact</router-link
               ></v-list-item-title
             >
@@ -147,7 +159,9 @@
             width="200px"
             style="color: white; margin-top: 20px"
           >
-            <router-link to="" style="text-decoration: none; color: inherit"
+            <router-link
+              to="/signUp"
+              style="text-decoration: none; color: inherit"
               >Log In</router-link
             >
           </v-btn>
@@ -258,6 +272,7 @@ export default {
   #footerText1 {
     margin-left: -20px;
     line-height: 15px;
+    font-size: 10px !important;
   }
   #footerText21 {
     font-size: 8px;
